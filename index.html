@@ -140,6 +140,26 @@
           width: 100px;
           height: 100px;
       }
+      /* Create four equal columns that floats next to each other */
+      .column {
+        float: left;
+        width: 25%;
+        padding: 20px;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Responsive layout - makes the four columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+        }
+      }
     </style>
 
     
@@ -169,8 +189,6 @@
       </div>
     </div>
   </div>
-
-  <div class="container my-5">
     <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
       <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
         <h1 class="display-4 fw-bold lh-1">HOW IT WORKS</h1>
@@ -180,35 +198,23 @@
       <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
           <img class="rounded-lg-3" src="/src/banner.jpg" alt="" width="720">
       </div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
-        <div class="col d-flex align-items-start">
-          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"></use></svg>
-          <div>
-            <h4 class="fw-bold mb-0">What's your product</h4>
-            <p>Please fill out our online form so that we can provide you with the most accurate price quote possible. Don't worry, it'll be simple.</p>
-          </div>
+      <div class="row">
+        <div class="column">
+          <h4 class="fw-bold mb-0">What's your product</h4>
+          <p>Please fill out our online form so that we can provide you with the most accurate price quote possible. Don't worry, it'll be simple.</p>
         </div>
-        <div class="col d-flex align-items-start">
-          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#cpu-fill"></use></svg>
-          <div>
-            <h4 class="fw-bold mb-0">Get In Touch</h4>
-            <p>Based on the information you provided, we will contact you by phone or email with a price quote.</p>
-            <p>You can also make an appointment at one of our locations.</p>
-          </div>
+        <div class="column">
+          <h4 class="fw-bold mb-0">Get In Touch</h4>
+          <p>Based on the information you provided, we will contact you by phone or email with a price quote.</p>
+          <p>You can also make an appointment at one of our locations.</p>
         </div>
-        <div class="col d-flex align-items-start">
-          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"></use></svg>
-          <div>
-            <h4 class="fw-bold mb-0">Free Shipping</h4>
-            <p>To send your products in for a final quote, we offer free, fully insured shipping. If things don't work out, we'll return your products to you for free and with full insurance. There's never any pressure to sell.</p>
-          </div>
+        <div class="column">
+          <h4 class="fw-bold mb-0">Free Shipping</h4>
+          <p>To send your products in for a final quote, we offer free, fully insured shipping. If things don't work out, we'll return your products to you for free and with full insurance. There's never any pressure to sell.</p>
         </div>
-        <div class="col d-flex align-items-start">
-          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#home"></use></svg>
-          <div>
-            <h4 class="fw-bold mb-0">Final Price</h4>
-            <p>We'll get the wheels in motion and wire the money to you, or write you a check, as soon as you accept our final offer.</p>
-          </div>
+        <div class="column">
+          <h4 class="fw-bold mb-0">Final Price</h4>
+          <p>We'll get the wheels in motion and wire the money to you, or write you a check, as soon as you accept our final offer.</p>
         </div>
       </div>
     </div>
@@ -245,7 +251,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-12 col-lg-8 m-auto">
+                  <div class="col-12 m-auto">
                     <form class="multisteps-form__form" name="contact" method="POST" data-netlify="true" novalidate>
                       <!--single form panel-->
                       <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active form-start" data-animation="scaleIn">
